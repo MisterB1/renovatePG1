@@ -1,7 +1,6 @@
 name: renovateTest
 on:
  workflow_dispatch:
-permissions: write-all
 jobs:
   renovate:
     runs-on: default
