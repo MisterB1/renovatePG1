@@ -2,14 +2,6 @@ name: pdns-renovate
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 16 * * *"
-
-permissions:
-  id-token: write
-  contents: write
-  pull-requests: write
-  issues: write
  
 concurrency: pdns-renovate
 
