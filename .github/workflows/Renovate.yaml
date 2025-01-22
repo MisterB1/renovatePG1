@@ -1,12 +1,12 @@
 name: RenovatePG1
 on:
  workflow_dispatch:
-permissions: write-all
-jobs:
-  renovatepg:
-    runs-on: default
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
-      - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v41.0.9
+  permissions: write-all
+  jobs:
+    renovatepg:
+      runs-on: default
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4.2.2
+        - name: Self-hosted Renovate
+          uses: renovatebot/github-action@v41.0.9
