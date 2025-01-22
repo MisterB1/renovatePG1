@@ -24,11 +24,6 @@ jobs:
       - name: Run Renovate
         run:  renovate
         env:
-          GOPROXY: https://artifactory.internal.cba/org.golang.proxy
-          GOSUMDB: off
-          RENOVATE_TOKEN: ${{ steps.generate-token.outputs.token }}
-          RENOVATE_ARTIFACTORY_PUBLIC_PASSWORD: ${{env.ARTIFACTORY_PASSWORD}}
-          RENOVATE_CONFIG_FILE: pdns-renovate-config.js
           RENOVATE_TIMEZONE: Australia/Sydney
           LOG_LEVEL: debug
-          LOG_FORMAT: jsonname: pdns-renovate
+          LOG_FORMAT: json
