@@ -1,0 +1,21 @@
+  - name: Get t from V
+    id: vault
+    uses: hashicorp/vault-action@d1720f055e0635fd932a1d2a48f87a666a57906c # v3.0.0
+    with:
+      method: jwt
+      path: jwt_github-repository
+      role: default
+      tlsSkipVerify: true
+      exportToken: true
+
+
+      - name: Check approval status
+        if: always()
+        id: check_approval
+        run: |
+          ./.github/scripts/check_approval.sh "${{ matrix.target_env }}" "${{ steps.generate-token.outputs.token }}" "${{ github.repository }}"
+      - uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4
+        if: always()
+        with:
+          name: ${{ matrix.target_env }}_deployment_protection
+          path: ${{ matrix.target_env }}_approval_status.txt
