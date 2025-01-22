@@ -1,10 +1,10 @@
-name: renovatePG
+name: RenovatePG1
 on:
  workflow_dispatch:
 permissions: write-all
 jobs:
-  renovate:
-    runs-on: ubuntu-latest
+  renovatepg:
+    runs-on: default
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
