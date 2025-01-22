@@ -1,3 +1,7 @@
+name: renovatePG
+on:
+ workflow_dispatch:
+permissions: write-all
 jobs:
   renovate:
     runs-on: ubuntu-latest
